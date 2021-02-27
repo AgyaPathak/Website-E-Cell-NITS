@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import {Link} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 import img1 from "../images/svg1.svg";
 import img2 from "../images/svg2.svg";
 import data from "../../data/data.json";
