@@ -1,13 +1,14 @@
-import React from "react";
+import React,{useEffect, useRef} from "react";
 import "./Home.css";
 import {Link,useHistory} from 'react-router-dom';
 import img1 from "../images/svg1.svg";
 import img2 from "../images/svg2.svg";
 import data from "../../data/data.json";
-
-
+import Animation from "../../Amination/Lottie"
 const Home=()=>{
     console.log(data);
+    
+
     return (
         <>
   <div className="parallax">
@@ -47,7 +48,8 @@ const Home=()=>{
       <div className="svg-lower">
         <img src={img2} alt />
       </div>
-      <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_k4qdp0xw.json" background="transparent" speed={1} loop autoPlay />
+      {/* <Lottie lottieRef={lottie} animationData={"https://assets8.lottiefiles.com/packages/lf20_k4qdp0xw.json"} background={"transparent"} speed={1} loop autoPlay /> */}
+      <Animation/>
     </div>
     <div className="about">
       <div className="line" />
