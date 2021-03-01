@@ -101,12 +101,12 @@ const Home=()=>{
 
     </ul>
   </div>
-  <div className="conference">
+  {/* <div className="conference">
     <div className="background-container">
       <div className="image-divider" />
       <div className="background-divider" />
     </div>
-  </div>
+  </div> */}
 
 
 
