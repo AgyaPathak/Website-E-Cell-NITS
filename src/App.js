@@ -1,7 +1,6 @@
-import { Suspense } from "react";
 import React from "react";
 /* importing global style*/
-import "./GlobalStyle.css";
+import "./data/GlobalStyle/GlobalStyle.css";
 import Home from "./Components/Home/Home";
 import { Switch, Route, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
@@ -17,9 +16,6 @@ function App() {
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact>
             <Home />
-          </Route>
-          <Route path="/event" exact>
-            <Event />
           </Route>
         </Switch>
       </AnimatePresence>
