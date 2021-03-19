@@ -1,18 +1,24 @@
-
-import {Suspense} from "react";
+import React from "react";
+/* importing global style*/
+import "./data/GlobalStyle/GlobalStyle.css";
 import Home from "./Components/Home/Home";
-import {Router,BrowserRouter} from "react-router-dom";
-import Event from "./Components/Event/Event";
+import { Switch, Route, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/Navbar/Navbar"
-
+import Navbar from "./Components/Navbar/Navbar";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
-    <div >
+    <div className="App">
       <Navbar />
-      <Home/>
-      <Event />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+        </Switch>
+      </AnimatePresence>
       <Footer />
     </div>
   );

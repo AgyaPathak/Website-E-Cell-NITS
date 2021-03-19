@@ -1,4 +1,4 @@
-import "./event.min.css";
+import "./event.scss";
 import  imgLink from "../images/img1.jpg";
 import React, {useEffect} from "react";
 // import "./style.min.css";
@@ -73,7 +73,7 @@ function Figure() {
 	  />
 	  <Figure2 
 		eventLink={imgLink}
-		fade="fade-left"
+		fade="fade-right"
 		eventName="Empressario" 
 		content={eventTwoConent}
 	  />
