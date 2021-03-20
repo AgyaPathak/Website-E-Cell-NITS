@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 /* initial css setup */
 @-webkit-keyframes fadeIn {
   0% {
@@ -150,6 +149,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -167,30 +167,13 @@
   flex: 1;
 }
 
-.second-section .lottie lottie-player {
+.second-section .lottie .svg-middle {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
   width: 40vw;
-  padding-left: 4vw;
   height: 90vh;
-}
-
-.second-section .lottie .svg-lower {
-  position: absolute;
-  height: 5vh;
-  width: 5vh;
-  right: 20%;
-  bottom: 25%;
-}
-
-.second-section .lottie .svg-upper {
-  height: 10vh;
-  width: 10vh;
-  position: absolute;
-  left: 5%;
-  top: 0%;
 }
 
 .second-section .about {
