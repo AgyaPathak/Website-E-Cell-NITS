@@ -1,15 +1,23 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { Link, useHistory } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Event from "../Event/Event";
 import img3 from "../images/svg3.svg";
 import data from "../../data/data.json";
-import { fade, fadeAnimation, leftAnim } from "../../animation";
-import { motion, useAnimation } from "framer-motion";
+import {
+  fade,
+  fadeAnimation,
+  leftAnim,
+  scrollRightAnim,
+  scrollLeftAnim,
+  scrollFade,
+} from "../../animation";
+import { motion } from "framer-motion";
+import { useScroll } from "../../scrollAnimation";
 const Home = () => {
-  const [element, view] = useInView({ threshold: 0.5 });
-  console.log(view);
+  const [element1, controls1] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <>
       <div className="parallax">
@@ -67,12 +75,22 @@ const Home = () => {
           </ul>
         </motion.div>
       </div>
-      <div className="second-section" ref={element}>
-        <div className="lottie">
+      <div className="second-section" ref={element1}>
+        <motion.div
+          className="lottie"
+          animate={controls1}
+          variants={scrollLeftAnim}
+          initial="hidden"
+        >
           {/* <Lottie lottieRef={lottie} animationData={"https://assets8.lottiefiles.com/packages/lf20_k4qdp0xw.json"} background={"transparent"} speed={1} loop autoPlay /> */}
           <img src={img3} alt="" className="svg-middle" />
-        </div>
-        <div className="about">
+        </motion.div>
+        <motion.div
+          className="about"
+          animate={controls1}
+          variants={scrollRightAnim}
+          initial="hidden"
+        >
           <div className="line" />
           <h1>About us</h1>
           <h3>
@@ -84,9 +102,15 @@ const Home = () => {
             libero enim nulla est! Nostrum, maiores esse. Velit vero aut
             architecto?
           </h3>
-        </div>
+        </motion.div>
       </div>
-      <div id="timeline">
+      <motion.div
+        id="timeline"
+        ref={element2}
+        variants={scrollFade}
+        animate={controls2}
+        initial="hidden"
+      >
         <h1>Timeline</h1>
         <ul>
           {data.map((obj, index) => {
@@ -110,7 +134,7 @@ const Home = () => {
             );
           })}
         </ul>
-      </div>
+      </motion.div>
       <Event />
       {/* <div className="conference">
     <div className="background-container">

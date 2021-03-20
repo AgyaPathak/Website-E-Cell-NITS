@@ -27,13 +27,52 @@ export const fadeAnimation = {
 export const leftAnim = {
   hidden: {
     opacity: 0,
-    x: -50,
+    x: -100,
   },
   show: {
     opacity: 1,
     x: 0,
     transition: {
       duration: 0.5,
+    },
+  },
+};
+export const scrollRightAnim = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+export const scrollLeftAnim = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+export const scrollFade = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.75,
     },
   },
 };
