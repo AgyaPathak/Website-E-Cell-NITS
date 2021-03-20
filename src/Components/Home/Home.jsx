@@ -5,53 +5,67 @@ import Event from "../Event/Event";
 import img1 from "../images/svg1.svg";
 import img2 from "../images/svg2.svg";
 import data from "../../data/data.json";
-import Animation from "../../Amination/Lottie";
+import Animation from "../../Animation/Lottie";
+import { fade, fadeAnimation, leftAnim } from "../../animation";
 import { motion } from "framer-motion";
 const Home = () => {
-  console.log(data);
-
   return (
     <>
       <div className="parallax">
-        <div className="wrapper">
-          <div>
-            <h3>Virtue</h3>
-            <h3>Self-Dependency</h3>
-            <h3>Willingness</h3>
-          </div>
-          <h2>
-            <span>E</span>
-            <span>n</span>
-            <span>t</span>r<span>e</span>
-            <span>p</span>
-            <span>r</span>
-            <span>e</span>
-            <span>n</span>
-            <span>e</span>
-            <span>u</span>
-            <span>r</span>
-            <span>s</span>
-            <span>h</span>
-            <span>i</span>
-            <span>p</span> <span>C</span>
-            <span>e</span>
-            <span>l</span>
-            <span>l</span>
-          </h2>
-          <h1>
-            <span>N</span>
-            <span>I</span>
-            <span>T</span> <span>S</span>
-            <span>I</span>
-            <span>L</span>
-            <span>C</span>
-            <span>H</span>
-            <span>A</span>
-            <span>R</span>
-          </h1>
-          <button>Explore</button>
-        </div>
-        <div className="social">
+        <motion.div className="wrapper">
+          <motion.div variants={fadeAnimation} initial="hidden" animate="show">
+            <motion.h3>Virtue</motion.h3>
+            <motion.h3>Self-Dependency</motion.h3>
+            <motion.h3>Willingness</motion.h3>
+          </motion.div>
+          <motion.h2 variants={fadeAnimation} initial="hidden" animate="show">
+            <motion.span variants={fade}>E</motion.span>
+            <motion.span variants={fade}>n</motion.span>
+            <motion.span variants={fade}>t</motion.span>
+            <motion.span variants={fade}>r</motion.span>
+            <motion.span variants={fade}>e</motion.span>
+            <motion.span variants={fade}>p</motion.span>
+            <motion.span variants={fade}>r</motion.span>
+            <motion.span variants={fade}>e</motion.span>
+            <motion.span variants={fade}>n</motion.span>
+            <motion.span variants={fade}>e</motion.span>
+            <motion.span variants={fade}>u</motion.span>
+            <motion.span variants={fade}>r</motion.span>
+            <motion.span variants={fade}>s</motion.span>
+            <motion.span variants={fade}>h</motion.span>
+            <motion.span variants={fade}>i</motion.span>
+            <motion.span variants={fade}>p</motion.span>{" "}
+            <motion.span variants={fade}>C</motion.span>
+            <motion.span variants={fade}>e</motion.span>
+            <motion.span variants={fade}>l</motion.span>
+            <motion.span variants={fade}>l</motion.span>
+          </motion.h2>
+          <motion.h1 variants={fadeAnimation} initial="hidden" animate="show">
+            <motion.span variants={fade}>N</motion.span>
+            <motion.span variants={fade}>I</motion.span>
+            <motion.span variants={fade}>T</motion.span>{" "}
+            <motion.span variants={fade}>S</motion.span>
+            <motion.span variants={fade}>I</motion.span>
+            <motion.span variants={fade}>L</motion.span>
+            <motion.span variants={fade}>C</motion.span>
+            <motion.span variants={fade}>H</motion.span>
+            <motion.span variants={fade}>A</motion.span>
+            <motion.span variants={fade}>R</motion.span>
+          </motion.h1>
+          <motion.button
+            variants={fadeAnimation}
+            initial="hidden"
+            animate="show"
+          >
+            Explore
+          </motion.button>
+        </motion.div>
+        <motion.div
+          className="social"
+          variants={leftAnim}
+          initial="hidden"
+          animate="show"
+        >
           <ul>
             <li>
               <a href="https://www.facebook.com/adityasingh.sisodiya.927">
@@ -69,7 +83,7 @@ const Home = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
       <div className="second-section">
         <div className="lottie">

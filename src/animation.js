@@ -1,0 +1,35 @@
+export const fade = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.05,
+    },
+  },
+};
+export const fadeAnimation = {
+  hidden: {
+    y: 100,
+  },
+  show: {
+    y: 0,
+    transition: { staggerChildren: 0.05, ease: "easeOut", duration: 1 },
+  },
+};
+export const leftAnim = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
