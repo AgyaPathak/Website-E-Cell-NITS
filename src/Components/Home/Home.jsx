@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import "./Home.css";
 import { Link, useHistory } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import Event from "../Event/Event";
-import img1 from "../images/svg1.svg";
-import img2 from "../images/svg2.svg";
+import img3 from "../images/svg3.svg";
 import data from "../../data/data.json";
-import Animation from "../../Animation/Lottie";
 import { fade, fadeAnimation, leftAnim } from "../../animation";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 const Home = () => {
+  const [element, view] = useInView({ threshold: 0.5 });
+  console.log(view);
   return (
     <>
       <div className="parallax">
@@ -19,26 +20,7 @@ const Home = () => {
             <motion.h3>Willingness</motion.h3>
           </motion.div>
           <motion.h2 variants={fadeAnimation} initial="hidden" animate="show">
-            <motion.span variants={fade}>E</motion.span>
-            <motion.span variants={fade}>n</motion.span>
-            <motion.span variants={fade}>t</motion.span>
-            <motion.span variants={fade}>r</motion.span>
-            <motion.span variants={fade}>e</motion.span>
-            <motion.span variants={fade}>p</motion.span>
-            <motion.span variants={fade}>r</motion.span>
-            <motion.span variants={fade}>e</motion.span>
-            <motion.span variants={fade}>n</motion.span>
-            <motion.span variants={fade}>e</motion.span>
-            <motion.span variants={fade}>u</motion.span>
-            <motion.span variants={fade}>r</motion.span>
-            <motion.span variants={fade}>s</motion.span>
-            <motion.span variants={fade}>h</motion.span>
-            <motion.span variants={fade}>i</motion.span>
-            <motion.span variants={fade}>p</motion.span>{" "}
-            <motion.span variants={fade}>C</motion.span>
-            <motion.span variants={fade}>e</motion.span>
-            <motion.span variants={fade}>l</motion.span>
-            <motion.span variants={fade}>l</motion.span>
+            Entrepreneurship Cell
           </motion.h2>
           <motion.h1 variants={fadeAnimation} initial="hidden" animate="show">
             <motion.span variants={fade}>N</motion.span>
@@ -85,16 +67,10 @@ const Home = () => {
           </ul>
         </motion.div>
       </div>
-      <div className="second-section">
+      <div className="second-section" ref={element}>
         <div className="lottie">
-          <div className="svg-upper">
-            <img src={img1} alt />
-          </div>
-          <div className="svg-lower">
-            <img src={img2} alt />
-          </div>
           {/* <Lottie lottieRef={lottie} animationData={"https://assets8.lottiefiles.com/packages/lf20_k4qdp0xw.json"} background={"transparent"} speed={1} loop autoPlay /> */}
-          <Animation />
+          <img src={img3} alt="" className="svg-middle" />
         </div>
         <div className="about">
           <div className="line" />
@@ -116,18 +92,18 @@ const Home = () => {
           {data.map((obj, index) => {
             index = index + 1;
             return (
-              <li>
+              <li key={index}>
                 <a href={obj.url} style={{ animationDelay: `${index * 0.5}s` }}>
-                  <div class="pic">
+                  <div className="pic">
                     <img src={obj.src} alt="" />
                   </div>
-                  <div class="txt">
+                  <div className="txt">
                     <h3>{obj.date}</h3>
                     <p>{obj.content}</p>
                   </div>
                 </a>
                 <div
-                  class="line"
+                  className="line"
                   style={{ animationDelay: `${index * 0.5}s` }}
                 ></div>
               </li>

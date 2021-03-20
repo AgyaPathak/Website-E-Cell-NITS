@@ -17,7 +17,11 @@ export const fadeAnimation = {
   },
   show: {
     y: 0,
-    transition: { staggerChildren: 0.05, ease: "easeOut", duration: 1 },
+    transition: {
+      staggerChildren: 0.05,
+      ease: "easeInOut",
+      duration: 1,
+    },
   },
 };
 export const leftAnim = {
