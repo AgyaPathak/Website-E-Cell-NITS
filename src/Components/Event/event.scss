@@ -2,15 +2,26 @@
 
 .event-info {
   position: relative;
+<<<<<<< HEAD
   margin-top: 10rem;
+=======
+  margin-top: 20rem;
+>>>>>>> a765fb78b8d9aa87277a48a7a9250b7e1cd63553
   color: #fff !important;
 }
 
 .event-badge {
+<<<<<<< HEAD
   @include setBackground(#f7f9fb);
   position: absolute;
   margin: 0 auto;
   z-index: -1;
+=======
+  @include setBackground(#f7f7f7);
+  position: absolute;
+  margin: 0 auto;
+  z-index: 5;
+>>>>>>> a765fb78b8d9aa87277a48a7a9250b7e1cd63553
   top: -100px;
   width: 200px;
   height: 200px;
