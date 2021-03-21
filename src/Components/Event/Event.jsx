@@ -1,4 +1,4 @@
-import "./event.min.css";
+import "./event.scss";
 import AOS from "aos";
 import React, { useEffect } from "react";
 import "aos/dist/aos.css";
@@ -7,7 +7,7 @@ import contents from "./contents.json";
 const Event = () => {
   useEffect(() => {
     AOS.init({
-      offset: 150,
+      offset: 400,
       delay: 0,
       duration: 1000
     });

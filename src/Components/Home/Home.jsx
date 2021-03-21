@@ -18,6 +18,7 @@ import { motion } from "framer-motion";
 import { useScroll } from "../../scrollAnimation";
 const Home = () => {
   const [element1, controls1] = useScroll();
+  const [element3, controls3] = useScroll();
   const [element2, controls2] = useScroll();
   return (
     <>
@@ -136,7 +137,14 @@ const Home = () => {
           })}
         </ul>
       </motion.div>
-      <Gallery />
+      <motion.div
+        ref={element3}
+        variants={scrollFade}
+        animate={controls3}
+        initial="hidden"
+      >
+        <Gallery />
+      </motion.div>
       <Event />
       {/* <div className="conference">
     <div className="background-container">

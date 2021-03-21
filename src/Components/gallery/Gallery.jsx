@@ -12,16 +12,8 @@ import img7   from  "../images/gimg-7.jpg";
 
 
 function Gallery(){
-    useEffect(() => {
-        AOS.init({
-          offset: 300,
-          delay: 0,
-          duration: 1000
-        });
-      }, []);
-
     return(
-    <div className="gallery-box" data-aos="fade-up">
+    <div className="gallery-box">
     <h2 className="heading">Gallery</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor dolor sit amet mollis semper. Maecenas massa dolor, congue et risus vel,</p>
         <div className="gallery">
