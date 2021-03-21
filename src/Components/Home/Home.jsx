@@ -3,6 +3,7 @@ import "./Home.css";
 import { Link, useHistory } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Event from "../Event/Event";
+import Gallery from "../gallery/Gallery";
 import img3 from "../images/svg3.svg";
 import data from "../../data/data.json";
 import {
@@ -135,6 +136,7 @@ const Home = () => {
           })}
         </ul>
       </motion.div>
+      <Gallery />
       <Event />
       {/* <div className="conference">
     <div className="background-container">

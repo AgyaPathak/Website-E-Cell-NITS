@@ -2,7 +2,19 @@ import "./navbar.css";
 import React from "react";
 import logo from "../images/ecell-logo-bw2.png";
 
+function changeNavBackground(){
+  if(window.scrollY>=100){
+   document.querySelector('.main-header').classList.add("scroll");
+  }
+  else{
+   document.querySelector('.main-header').classList.remove("scroll");
+  }
+ }
+ window.addEventListener('scroll' ,changeNavBackground);
+
 function Navbar() {
+
+
   return (
     <div>
       <header className="main-header">
@@ -35,7 +47,7 @@ function Navbar() {
             </li>
           </ul>
         </nav>
-      </header>
+        
       <nav className="mob-nav">
         <div className="menu-wrap">
           <input type="checkbox" class="toggler" />
@@ -70,6 +82,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      </header>
     </div>
   );
 }

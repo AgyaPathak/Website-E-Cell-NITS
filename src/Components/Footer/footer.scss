@@ -1,4 +1,29 @@
-@import './config';
+$bgColor: #211B25;
+$ftColor: #211B25;
+$fbColor: #251A1E;
+$font-stack: "Source Sans Pro", sans-serif;
+//set text color based on background
+
+@function setTextColor($color){
+    @if(lightness($color) > 70){
+        @return #333;
+    } @else{
+        @return #fff;
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+//set background & text color
+
+@mixin setBackground($color) {
+    background-color: $color;
+    color: setTextColor($color);
+}
+
 
 *{
   box-sizing: border-box;
@@ -7,8 +32,9 @@
 }
 
 footer {
-  clear: both;
+  margin-top: 10rem;
   font-family: $font-stack;
+  clear: both;
   @include setBackground($ftColor);
   display: flex;
   flex-direction: column;
@@ -54,6 +80,11 @@ footer {
   flex-direction: row;
   width: 30vw;
   margin-top: 2rem;
+  ul{
+   display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
   img{
     width: 50%;
   }
@@ -64,6 +95,9 @@ footer {
   }
 }
 .fcol-2{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 25vw;
   padding: 0 2rem;
   a{
@@ -71,7 +105,6 @@ footer {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin-right: 20px;
     font-size: 20px;
     overflow: hidden;
     position: relative;
@@ -88,12 +121,18 @@ footer {
       transform: translate(-50%, -50%);
     }
   }
-
   li{
-    margin-left: 5vw !important;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+    display: grid;
+    grid-template-columns: 10px auto;
+    grid-gap: 20px;
+    cursor: pointer;
+    p{
+      display: inline;
+    }
+    p span{
+      font-size: 1rem;
+      font-weight: bold;
+    }
   }
   a:after {
     content: "";
@@ -121,7 +160,6 @@ footer {
     content: "";
     display: inline-block;
     height: 100%;
-    vertical-align: middle;
   }
 }
 .fcol-3{
@@ -173,6 +211,7 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     outline: none;
+    border: none;
   }
 }
 
@@ -191,8 +230,16 @@ footer {
       margin-top: 2.5rem;
       width: 100vw;
       ul{
-        @include flexCenter;
-        span{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        li:nth-child(2){
+          margin-left: 2rem;
+          margin-right: 2rem;
+        }
+        li{
+          grid-gap: 0;
+        }
+        p{
           display: none;
         }
       }
@@ -202,7 +249,7 @@ footer {
       width: 100vw;
       text-align: center;
       input[type="email"]{
-        width: 45vw;
+        width: 75vw;
       }
       button{
         margin-left: -2rem;

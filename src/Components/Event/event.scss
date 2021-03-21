@@ -1,233 +1,179 @@
-@import "config";
+$imglink1 : "https://i.picsum.photos/id/1014/6016/4000.jpg?hmac=yMXsznFliL_Y2E2M-qZEsOZE1micNu8TwgNlHj7kzs8";
+$imgLink2: "./photo2.jpg";
 
-.event-info {
+
+@mixin fadeText($text-color, $direction : top, $offset : 2em, $transition: 0.5s ease-out) {  
+  // text-color : dark
+  $color: #fff;
+
+  // direction : top
+  $deg: 180deg;
+  $pos: bottom;
+  
+  @if($text-color == 'light') {
+    $color: #000;
+    mix-blend-mode: screen;
+  } @else {
+    mix-blend-mode: multiply;
+  }
+  
+  @if($direction == 'left') {
+    $deg: 90deg;
+    $pos: right;
+  } @else if ($direction == 'right') {
+    $deg: -90deg;
+    $pos: left;
+  } @else if ($direction == 'bottom') {
+    $deg: 0deg;
+    $pos: top;
+  }
+  
   position: relative;
-<<<<<<< HEAD
-  margin-top: 10rem;
-=======
-  margin-top: 20rem;
->>>>>>> a765fb78b8d9aa87277a48a7a9250b7e1cd63553
-  color: #fff !important;
+  cursor: pointer;
+
+  &::after {
+    background: linear-gradient($deg, transparent, $color $offset) no-repeat $pos center / 100% 100%;
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    pointer-events: none;
+    transition: $transition;
+  }
+  
+  &:hover::after {
+    @if($direction == 'left' or $direction == 'right') {
+      background-size: 0% 100%;  
+    } @else {
+      background-size: 100% 0%;
+    }
+  }
 }
 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+hr {
+  border-color: #EAF6F6;
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 8px;
+  width: 10%;
+  margin-bottom: 1rem;
+}
+.event-section{
+  margin-top: 15rem;
+  max-height: calc(100vh+10rem);
+  width: calc(100vw+20px);
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  color: #333;
+}
 .event-badge {
-<<<<<<< HEAD
-  @include setBackground(#f7f9fb);
   position: absolute;
+  background-color: #f7f7f7;
   margin: 0 auto;
-  z-index: -1;
-=======
-  @include setBackground(#f7f7f7);
   position: absolute;
-  margin: 0 auto;
   z-index: 5;
->>>>>>> a765fb78b8d9aa87277a48a7a9250b7e1cd63553
   top: -100px;
   width: 200px;
   height: 200px;
   transform: rotate(-45deg);
   left: 0px;
   right: 0px;
-  display: block;
+  display: flex;
   overflow: hidden;
-  @include flexCenter;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-
+  h3{
+    font-size: 2rem;
+  }
+  h4{
+    font-size: 1.1rem;
+  }
   .badgeContent {
-    font-family: $font-stack;
     transform: rotate(45deg);
     text-align: center;
-    // width:300px;
     transform-origin: 50% 50%;
     font-weight: 800;
     color: #333;
-    // text-transform: uppercase;
-  }
-
-  h4 {
-    font-size: 1rem;
-    margin-top: 2px;
-  }
-  h3 {
-    font-size: 1.8rem;
   }
 }
-
-.eventBox {
-  font-family: $font-stack;
+.first-event-container,
+.second-event-container{
   width: 50%;
-  float: left;
-  overflow: hidden;
-  @include setBackground(#000);
-
-  figure {
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 800;
     position: relative;
-    z-index: 1;
-    display: block;
-    overflow: hidden;
-    width: 100%;
+    margin: 3rem auto 2rem auto;
+  }
+  figure{
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    // opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    cursor: pointer;
-
-    //scrolling effect
-    img {
-      width: calc(100% + 20px);
-      height: 500px;
-      transition: opacity 0.35s, transform 0.35s;
-      transform: translate3d(-10px, 0, 0);
-      opacity: 0.8;
-      // backface-visibility: hidden;
-    }
-
-    &:hover img {
-      opacity: 0.4;
-      transform: translate3d(0, 0, 0);
-    }
-
-    &:hover p {
-      opacity: 1;
-      // transform: translate3d(0, 0, 0);
-    }
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    opacity: 0.8;
-  }
-
-  figcaption {
     padding: 6rem;
-    font-size: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    h2 {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-weight: 800;
-      position: relative;
-      margin: 2.5rem auto;
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 3.5rem;
-        display: block;
-        border-bottom: 2px solid #fff;
-        width: 0;
-        transform: translateX(-100%);
-        transition: all 0.3s linear;
-      }
-    }
-    &:hover h2::after {
-      width: 60%;
-      transform: translateX(-50%);
-      transition: all 0.3s linear;
-      left: 50%;
-    }
-    p {
-      letter-spacing: 0.1rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      & {
-        left: 0;
-        transform: translateX(60%);
-        transition: all 0.4s linear;
-        opacity: 0;
-      }
-    }
-    &:hover p,
-    a {
-      width: 100%;
-      transform: translateX(0);
-      transition: all 0.4s linear;
-    }
-    a {
-      transition: all 0.4s ease-in-out;
-      opacity: 0;
-    }
-    &:hover a {
-      opacity: 1;
-      transition: all 0.4s ease-in-out;
-    }
-    .btn {
-      width: 7rem;
-      display: inline-block;
-      @include setBackground(#f7f9fb);
-      padding: 0.5rem 0.1rem;
-      margin-top: 2rem;
-      cursor: pointer;
-      border-radius: 3px;
-      color: #333;
-      text-decoration: none;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-    @media (max-width: 1080px) {
-      p {
-        font-size: 0.9rem;
-        letter-spacing: 0.01rem;
-        line-height: 1.3;
-      }
-    }
+    overflow: hidden;
+    color: #f7f7f8;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    
+  }
+  a{
+    text-decoration: none;
+    color: rgb(251, 255, 0);
+    // margin-top: 1rem;
   }
 }
+.first-event-container figure{
+  background-image: url($imglink1);
+}
+.second-event-container figure{
+  background-image: url($imgLink2);
+}
 
-@media (max-width: 968px) {
-  .event-info {
-    margin-top: 20rem;
+@media (max-width: 800px){
+  .event-section{
+    display: block;
   }
-  .event-badge {
-    margin-top: -10rem;
+  .event-badge{
+    height: 150px;
+    width: 150px;
+    top: -75px;
   }
-  // .event-badge{
-  // 	display: none;
-  // }
-}
-
-//mobile
-
-.container {
-  background-color: #f7f9fb;
-}
-
-.main-header p {
-  font-size: 2rem;
-}
-
-img {
+.first-event-container,
+.second-event-container{
   width: 100%;
-}
-
-.card {
-  display: block;
-  background: #000;
-  text-align: center;
-}
-
-.card img {
-  height: 400px;
-}
-
-.card > div {
-  padding: 2rem 4rem;
-}
-
-.btn {
-  width: 7rem;
-  display: inline-block;
-  @include setBackground(#f7f9fb);
-  padding: 0.5rem 0.1rem;
-  margin-top: 2rem;
-  cursor: pointer;
-  border-radius: 3px;
-  color: #333;
-  text-decoration: none;
-  &:hover {
-    opacity: 0.8;
+  figure{
+    font-size: 0.9rem;
+    // height: 30rem;
+    padding: 5rem 1rem;
   }
+}
+.second-event-container figure{
+  padding:1rem;
+}
+}
+@media (min-width: 800px){
+  figcaption{
+    color: #fff;
+@supports(mix-blend-mode: screen){
+   @include fadeText(light, top, 2rem);
+} 
+  }
+
 }
