@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+/* initial css setup */
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -16,36 +16,9 @@
   }
 }
 
-a {
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-* {
-  list-style: none;
-  margin: 0%;
-  padding: 0%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-}
-
 .parallax {
   position: relative;
-  background-image: url("../../images/pic1.png");
+  background-image: url("../images/pic1.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -55,12 +28,12 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .parallax .wrapper {
@@ -72,15 +45,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .parallax .wrapper div {
@@ -89,31 +62,31 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   text-align: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .parallax .wrapper h3 {
-  font-size: 4vh;
+  font-size: 2vw;
   color: white;
   font-weight: 300;
   margin-left: 1.5vw;
 }
 
 .parallax .wrapper h2 {
-  font-size: 6vh;
+  font-size: 3vw;
   color: white;
   font-weight: 600;
 }
 
 .parallax .wrapper h1 {
-  font-size: 10vh;
+  font-size: 4vw;
   color: black;
   font-weight: 700;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -125,7 +98,7 @@ body {
   color: white;
   background: transparent;
   border: white 2px solid;
-  font-size: 2vh;
+  font-size: 1vw;
   font-weight: 600;
   padding: 1em 2em;
   border-radius: 12px;
@@ -151,10 +124,10 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .parallax .social ul li {
@@ -171,69 +144,53 @@ body {
   width: 100%;
   height: 100vh;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   text-align: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .second-section .lottie {
   position: relative;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
-.second-section .lottie lottie-player {
+.second-section .lottie .svg-middle {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   width: 40vw;
-  padding-left: 4vw;
   height: 90vh;
-}
-
-.second-section .lottie .svg-lower {
-  position: absolute;
-  height: 5vh;
-  width: 5vh;
-  right: 20%;
-  bottom: 25%;
-}
-
-.second-section .lottie .svg-upper {
-  height: 10vh;
-  width: 10vh;
-  position: absolute;
-  left: 5%;
-  top: 0%;
 }
 
 .second-section .about {
   overflow: hidden;
   position: relative;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: start;
 }
 
@@ -284,7 +241,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   position: relative;
 }
 
@@ -298,7 +255,7 @@ body {
   top: 0;
   left: 50%;
   -webkit-transform: translateX(-60%);
-          transform: translateX(-60%);
+  transform: translateX(-60%);
 }
 
 @media (max-width: 768px) {
@@ -328,7 +285,7 @@ body {
 #timeline ul li {
   position: relative;
   -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
   padding-bottom: 30px;
   z-index: 2;
 }
@@ -336,7 +293,7 @@ body {
 @media (max-width: 768px) {
   #timeline ul li {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
     padding-bottom: 40px;
   }
 }
@@ -378,7 +335,7 @@ body {
     top: auto;
     bottom: 12px;
     -webkit-transform: translate(5px, 0);
-            transform: translate(5px, 0);
+    transform: translate(5px, 0);
   }
 }
 
@@ -389,14 +346,14 @@ body {
 #timeline ul li:nth-child(even) {
   padding-left: 80px;
   -webkit-transform: translateY(50%);
-          transform: translateY(50%);
+  transform: translateY(50%);
 }
 
 @media (max-width: 768px) {
   #timeline ul li:nth-child(even) {
     padding-left: 0px;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -410,7 +367,7 @@ body {
     top: auto;
     bottom: 12px;
     -webkit-transform: translate(-7px, 0);
-            transform: translate(-7px, 0);
+    transform: translate(-7px, 0);
   }
 }
 
@@ -435,7 +392,7 @@ body {
   background-color: #fff;
   opacity: 0;
   -webkit-animation: fadeIn linear 0.5s 1s forwards;
-          animation: fadeIn linear 0.5s 1s forwards;
+  animation: fadeIn linear 0.5s 1s forwards;
 }
 
 @media (max-width: 768px) {
@@ -447,12 +404,12 @@ body {
   #timeline ul li a .pic {
     margin-right: 20px;
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
     padding-bottom: 0;
   }
   #timeline ul li a .txt {
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
     padding-bottom: 0;
     overflow-wrap: break-word;
   }
@@ -461,13 +418,13 @@ body {
 @media (max-width: 480px) {
   #timeline ul li a .pic {
     -ms-flex-preferred-size: 70%;
-        flex-basis: 70%;
+    flex-basis: 70%;
   }
   #timeline ul li a .txt {
     -ms-flex-preferred-size: 30%;
-        flex-basis: 30%;
+    flex-basis: 30%;
     -ms-flex-item-align: end;
-        align-self: flex-end;
+    align-self: flex-end;
   }
   #timeline ul li a .txt h3 {
     text-align: right;
@@ -480,7 +437,7 @@ body {
 
 #timeline ul li a:hover .pic img {
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 #timeline ul li .pic {
@@ -497,7 +454,7 @@ body {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #timeline ul li .pic img {
@@ -528,7 +485,7 @@ body {
   z-index: -1;
   opacity: 0;
   -webkit-animation: fadeIn linear 0.5s 2s forwards;
-          animation: fadeIn linear 0.5s 2s forwards;
+  animation: fadeIn linear 0.5s 2s forwards;
 }
 
 .conference {
@@ -548,8 +505,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .conference .background-container .image-divider {
