@@ -24,6 +24,7 @@ p {
 body {
   font-family: "Open Sans", sans-serif;
   flex-wrap: wrap;
+  scroll-behavior: smooth;
 }
 
 

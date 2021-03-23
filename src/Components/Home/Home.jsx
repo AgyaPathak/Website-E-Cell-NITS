@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect,useRef} from "react";
 import "./Home.css";
 import { Link, useHistory } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
@@ -16,23 +16,39 @@ import {
 } from "../../animation";
 import { motion } from "framer-motion";
 import { useScroll } from "../../scrollAnimation";
+import LocomotiveScroll from 'locomotive-scroll';
+
+
 const Home = () => {
   const [element1, controls1] = useScroll();
   const [element3, controls3] = useScroll();
   const [element2, controls2] = useScroll();
+  const scrollon= useRef();
+useEffect(()=>{
+  
+  
+// start again all reset
+const scroll = new LocomotiveScroll({
+    // el: scrollon.current,
+    // smooth: true
+});
+
+},[])
+
   return (
-    <>
-      <div className="parallax">
+<>
+<div >
+      <div className="parallax" >
         <motion.div className="wrapper">
-          <motion.div variants={fadeAnimation} initial="hidden" animate="show">
+          <motion.div  variants={fadeAnimation} initial="hidden" animate="show">
             <motion.h3>Virtue</motion.h3>
             <motion.h3>Self-Dependency</motion.h3>
             <motion.h3>Willingness</motion.h3>
           </motion.div>
-          <motion.h2 variants={fadeAnimation} initial="hidden" animate="show">
+          <motion.h2  variants={fadeAnimation} initial="hidden" animate="show">
             Entrepreneurship Cell
           </motion.h2>
-          <motion.h1 variants={fadeAnimation} initial="hidden" animate="show">
+          <motion.h1  variants={fadeAnimation} initial="hidden" animate="show">
             <motion.span variants={fade}>N</motion.span>
             <motion.span variants={fade}>I</motion.span>
             <motion.span variants={fade}>T</motion.span>{" "}
@@ -48,6 +64,7 @@ const Home = () => {
             variants={fadeAnimation}
             initial="hidden"
             animate="show"
+            
           >
             Explore
           </motion.button>
@@ -77,7 +94,9 @@ const Home = () => {
           </ul>
         </motion.div>
       </div>
-      <div className="second-section" ref={element1}>
+
+      <section >
+      <div className="second-section"  ref={element1}>
         <motion.div
           className="lottie"
           id="the_lottie"
@@ -107,12 +126,15 @@ const Home = () => {
           </h3>
         </motion.div>
       </div>
+      </section>
+      <section >
       <motion.div
         id="timeline"
         ref={element2}
         variants={scrollFade}
         animate={controls2}
         initial="hidden"
+        
       >
         <h1>Timeline</h1>
         <ul>
@@ -138,6 +160,7 @@ const Home = () => {
           })}
         </ul>
       </motion.div>
+      </section>
       <motion.div
         ref={element3}
         variants={scrollFade}
@@ -161,6 +184,8 @@ const Home = () => {
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossOrigin="anonymous"
       />
+
+  </div>
     </>
   );
 };
