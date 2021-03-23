@@ -258,9 +258,29 @@
   transform: translateX(-60%);
 }
 
+
+
+@media (max-width: 1050px) {
+ .parallax{
+  .wrapper {
+    
+    button{
+      font-size: 1.6vw !important;
+    }
+  }
+ }
+}
 @media (max-width: 768px) {
   #timeline ul::before {
     display: none;
+  }
+  .social{
+    height: 20vh;
+    left: 1vw;
+    bottom: 4vh;
+    ul li {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -521,3 +541,240 @@
   background: black;
 }
 /*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width:850px){
+  .parallax{ .wrapper {
+    
+    width: 80%;
+    h3{
+      font-size: 1.4rem;
+    }
+    h2{
+      font-size: 2rem;
+    }
+    h1{
+      span{
+        font-size: 2.5rem  ;
+      }
+    }
+    button{
+      
+      font-size: 3vw;
+          
+    }
+  }
+  
+  .fa{
+    font-size: 1.5rem !important;
+  }
+
+}
+
+
+  
+  .second-section {
+    display: flex;
+    flex-direction: column-reverse;
+    // height: 60vh;
+    .lottie .svg-middle {
+      height: auto;
+      width: 60%;
+    }
+    #the_lottie{
+      height: 20vh;
+      
+    }
+    .about{
+      margin-top: 5%;
+      width: 85%;
+      h3{
+        margin-top: 6%;
+        line-height: 2;
+        font-size: 1.1rem;
+        width: 100%;
+      }
+    
+    }
+  }
+}
+
+@media screen and (max-width:760px){
+  .parallax{ .wrapper {
+    
+    width: 80%;
+    h3{
+      font-size: 1.5rem;
+    }
+    h2{
+      font-size: 2.1rem;
+    }
+    h1{
+      span{
+        font-size: 2.5rem  ;
+      }
+    }
+    button{
+      
+      font-size: 1rem !important;
+          
+    }
+  }
+  
+  .fa{
+    font-size: 1.5rem !important;
+  }
+  .social{
+    height: 20vh;
+    left: 1vw;
+    bottom: 4vh;
+    ul li {
+      margin-bottom: 1rem;
+    }
+  }
+  
+
+}
+.about h1{
+  font-size: 2rem !important;
+}
+
+}
+
+@media screen and (max-width:660px){
+  .social{
+    height: 20vh;
+    left: 1rem !important;
+    bottom: 4vh;
+    ul li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+@media screen and (max-width:550px){
+  .parallax{ .wrapper {
+    
+    width: 90%;
+    h3{
+      font-size: 1.2rem;
+    }
+    h2{
+      font-size: 1.7rem;
+    }
+    h1{
+      span{
+        font-size: 2rem  ;
+      }
+    }
+    button{
+      
+      font-size: 1rem !important;
+          
+    }
+    
+    
+  }
+  .social{
+    height: 20vh;
+    left: 1rem; 
+    bottom: 0vh;
+  }
+  .fa{
+    font-size: 1.5rem !important;
+  }
+}
+.about{
+  margin-top: 5%;
+  width: 85%;
+  h3{
+    margin-top: 6%;
+    line-height: 2;
+    font-size: 1rem !important; 
+    width: 100%;
+  }
+
+}
+}
+@media screen and (max-width:650px){
+.second-section {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 120vh;
+  .lottie .svg-middle {
+    height: 45vh;
+    width: 80%;
+  }
+  #the_lottie{
+    height: 20vh;
+    
+  }
+  .about{
+    margin-top: 5%;
+    width: 85%;
+    h3{
+      margin-top: 6%;
+      line-height: 2;
+      font-size: 1.2rem;
+      width: 100%;
+    }
+  }
+}
+}
+@media screen and (max-width:500px){
+  .second-section {
+    
+    height: 140vh;
+    
+    .about{
+      margin-top: 5%;
+      width: 85%;
+      height: 80vh;
+      h3{
+        margin-top: 6%;
+        line-height: 2;
+        font-size: 1.2rem;
+        width: 100%;
+      }
+    }
+  }
+  }
+  @media screen and (max-width:330px){
+    .second-section {
+      
+      height: 160vh;
+    }
+    .parallax{ .wrapper {
+    
+    width: 90%;
+    h3{
+      font-size: 1rem;
+    }
+    h2{
+      font-size: 1.4rem;
+    }
+    h1{
+      span{
+        font-size: 2rem  ;
+      }
+    }
+    button{
+      
+      font-size: .8rem !important;
+          
+    }
+    
+    
+  }
+  .social{
+    height: 20vh;
+    left: 1rem; 
+    bottom: 0vh;
+  }
+  .fa{
+    font-size: 1.5rem !important;
+  }
+}
+      
+    
+  }
+ 
+
