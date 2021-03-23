@@ -80,6 +80,7 @@ const Home = () => {
       <div className="second-section" ref={element1}>
         <motion.div
           className="lottie"
+          id="the_lottie"
           animate={controls1}
           variants={scrollLeftAnim}
           initial="hidden"

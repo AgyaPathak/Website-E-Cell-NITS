@@ -521,4 +521,32 @@
   height: 100vh;
   background: black;
 }
+@media screen and (max-width: 850px) {
+  .second-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .second-section .lottie .svg-middle {
+    height: 45vh;
+    width: 80%;
+  }
+  .second-section #the_lottie {
+    height: 20vh;
+  }
+  .second-section .about {
+    margin-top: 5%;
+    width: 85%;
+  }
+  .second-section .about h3 {
+    margin-top: 6%;
+    line-height: 2;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=Home.css.map */

@@ -521,3 +521,29 @@
   background: black;
 }
 /*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width:850px){
+  .second-section {
+    display: flex;
+    flex-direction: column-reverse;
+    // height: 60vh;
+    .lottie .svg-middle {
+      height: 45vh;
+      width: 80%;
+    }
+    #the_lottie{
+      height: 20vh;
+      
+    }
+    .about{
+      margin-top: 5%;
+      width: 85%;
+      h3{
+        margin-top: 6%;
+        line-height: 2;
+        font-size: 1.2rem;
+        width: 100%;
+      }
+    }
+  }
+}
